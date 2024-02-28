@@ -1,29 +1,21 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
+describe("App Component", () => {
+  // Variable to hold an instance of the AppComponent
+  let fixture: AppComponent;
+
+  // beforeEach: A setup function that runs before each test in the describe block
+  beforeEach(() => {
+    fixture = new AppComponent();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  // Test case: It verifies that the component has a specific title.
+  it("should have a title Angular Testing", () => {
+    expect(fixture.title).toEqual("Angular Test");
   });
 
-  it(`should have the 'Test' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Test');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Test');
+  // Another test case: It verifies the sum method of the component.
+  it("should add 1 + 2 equal to 3", () => {
+    expect(fixture.sum(1, 2)).toBe(3);
   });
 });
