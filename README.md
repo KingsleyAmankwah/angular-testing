@@ -35,7 +35,7 @@ yarn add --dev jest jest-preset-angular @types/jest
 2. Add the following code to `setup.jest.ts`:
 
 ```bash
-import 'jest-preset-angular/setup-jest';
+import 'jest-preset-angular/setup-jest'
 ```
 
 ### Configuration
@@ -79,5 +79,5 @@ Run the test with the command below.
 
 ```bash
 npm run test
-``
+
 ```
