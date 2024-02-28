@@ -1,27 +1,76 @@
-# AngularTesting
+# Learning Jest for Testing Angular Applications
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Jest is a powerful JavaScript testing framework gaining popularity in the Angular community. It offers several advantages over traditional testing frameworks like Jasmine:
 
-## Development server
+- **Faster Execution:** Jest boasts quicker test execution times compared to Jasmine.
+- **Better Developer Experience:** Jest provides a streamlined experience with features like automatic test discovery and built-in matchers.
+- **Wider Support:** As a framework-agnostic tool, Jest isn't limited to Angular, making it versatile for different projects.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+Install the necessary dependencies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### npm
 
-## Build
+```bash
+npm install --dev jest jest-preset-angular @types/jest
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### yarn
 
-## Running unit tests
+```bash
+yarn add --dev jest jest-preset-angular @types/jest
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Dependencies:
 
-## Running end-to-end tests
+- `jest`: Jest testing platform.
+- `jest-preset-angular`: Configuration preset with common settings for Angular.
+- `@types/jest`: Jest types for TypeScript support.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Setup
 
-## Further help
+1. Create a `setup.jest.ts` file in the root directory of the application.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Add the following code to `setup.jest.ts`:
+
+```bash
+import 'jest-preset-angular/setup-jest';
+```
+
+### Configuration
+
+Update the `tsconfig.spec.json` file:
+
+```bash
+"types": [
+  "jest",
+  "node"
+]
+
+```
+
+Add Jest configuration to `package.json`:
+
+```bash
+"jest": {
+  "preset": "jest-preset-angular",
+  "setupFilesAfterEnv": ["<rootDir>/src/setup.jest.ts"]
+  }
+
+```
+
+### Scripts
+
+Add these scripts to the `package.json`:
+
+```bash
+"scripts": {
+  "test": "jest",
+  "test:watch": "jest --watch",
+  "test:coverage": "jest --coverage"
+}
+
+```
+
+These scripts allow the app to run tests, enable watch mode for continuous testing, and generate a coverage report.
