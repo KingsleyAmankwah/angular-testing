@@ -74,3 +74,10 @@ Add these scripts to the `package.json`:
 ```
 
 These scripts allow the app to run tests, enable watch mode for continuous testing, and generate a coverage report.
+
+Run the test with the command below.
+
+```bash
+npm run test
+``
+```
