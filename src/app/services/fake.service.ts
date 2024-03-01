@@ -12,12 +12,10 @@ export class FakeService {
 
   getData() {
     const url = `${this.API_URL}/all`;
-    console.log(url);
     return this.http.get<dataDetails>(url);
   }
   saveData(data: dataDetails) {
     const url = `${this.API_URL}/save`;
-    console.log(data);
     return this.http.post<dataDetails>(url, data);
   }
 
@@ -28,25 +26,21 @@ export class FakeService {
 
   updateData(data: dataDetails) {
     const url = `${this.API_URL}/update`;
-    console.log(data);
     return this.http.put<dataDetails>(url, data);
   }
 
   signUp(data: dataDetails) {
     const url = `${this.API_URL}/signup`;
-    console.log(data);
     return this.http.post<dataDetails>(url, data);
   }
 
   signIn(data: dataDetails) {
     const url = `${this.API_URL}/signin`;
-    console.log(data);
     return this.http.post<dataDetails>(url, data);
   }
 
   signOut() {
     const url = `${this.API_URL}/signout`;
-    console.log(url);
     return this.http.get<dataDetails>(url);
   }
 }
